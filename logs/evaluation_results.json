@@ -1,0 +1,211 @@
+{
+  "timestamp": "2026-02-17T17:11:00.519335",
+  "total_questions": 12,
+  "correct_answers": 7,
+  "accuracy": 0.5833333333333334,
+  "by_category": {
+    "character": {
+      "total": 1,
+      "correct": 1
+    },
+    "organization": {
+      "total": 2,
+      "correct": 2
+    },
+    "planet": {
+      "total": 1,
+      "correct": 1
+    },
+    "technology": {
+      "total": 1,
+      "correct": 1
+    },
+    "location": {
+      "total": 1,
+      "correct": 1
+    },
+    "event": {
+      "total": 1,
+      "correct": 1
+    },
+    "missing_entity": {
+      "total": 3,
+      "correct": 0
+    },
+    "out_of_domain": {
+      "total": 2,
+      "correct": 0
+    }
+  },
+  "results": [
+    {
+      "question_id": 1,
+      "question": "Who is Lord Umbral?",
+      "expected_answer": "Supreme leader of the Voidborn Empire",
+      "should_answer": true,
+      "actual_answer": "Lord Umbral, born as Sheev Palpatine, was the Dark Sovereign of the Voidborn and founder of the Nexus Dominion.",
+      "chunks_found": true,
+      "sources": [
+        "characters\\Lord_Umbral.md",
+        "characters\\Lord_Umbral.md",
+        "characters\\Zeph_Nexar.md"
+      ],
+      "is_correct": true,
+      "duration_sec": 1.973333
+    },
+    {
+      "question_id": 2,
+      "question": "What is the Guardian Order?",
+      "expected_answer": "Peacekeeping organization that maintains order across the galaxy",
+      "should_answer": true,
+      "actual_answer": "The Guardian Order was an ancient organization of Synth Flux users dedicated to maintaining peace and justice in the Nexus Realm. For thousands of years, they served as peacekeepers and advisors. The Synthari followed the Radiant Flow of the Synt Flux, believing in: Peace over violence",
+      "chunks_found": true,
+      "sources": [
+        "organizations\\Synthari_Order.md"
+      ],
+      "is_correct": true,
+      "duration_sec": 2.227841
+    },
+    {
+      "question_id": 3,
+      "question": "Tell me about planet Nexus Prime",
+      "expected_answer": "Capital planet, center of commerce and technology",
+      "should_answer": true,
+      "actual_answer": "Nexus Prime is a desert planet located in the Outer Rim of the Nexus Realm. Despite its harsh environment, it has been inhabited for millennia. The planet is covered almost entirely in sand dunes and rocky canyons. Twin suns beat down relentlessly, making water the most precious resource.",
+      "chunks_found": true,
+      "sources": [
+        "planets\\Aridus_Prime.md",
+        "planets\\Verdant_Moon.md",
+        "organizations\\Prime_Covenant.md"
+      ],
+      "is_correct": true,
+      "duration_sec": 2.819408
+    },
+    {
+      "question_id": 4,
+      "question": "What is a Lumina Blade?",
+      "expected_answer": "Energy weapon used by warriors",
+      "should_answer": true,
+      "actual_answer": "The Plasma Blade was the weapon of choice for both Synthari and Voidborn. It consisted of a blade of pure energy emitted from a metallic hilt.",
+      "chunks_found": true,
+      "sources": [
+        "technology\\Plasma_Blade.md",
+        "technology\\Plasma_Blade.md"
+      ],
+      "is_correct": true,
+      "duration_sec": 3.742906
+    },
+    {
+      "question_id": 5,
+      "question": "Who leads the Shadow Syndicate?",
+      "expected_answer": "Criminal organization details",
+      "should_answer": true,
+      "actual_answer": "Shadow Sover",
+      "chunks_found": true,
+      "sources": [
+        "characters\\Kain_Shadowstrike.md",
+        "characters\\Lord_Umbral.md",
+        "characters\\Cypher-9.md"
+      ],
+      "is_correct": true,
+      "duration_sec": 0.69385
+    },
+    {
+      "question_id": 6,
+      "question": "Describe Veridian Outpost",
+      "expected_answer": "Remote station used for various purposes",
+      "should_answer": true,
+      "actual_answer": "Veridian Outpost is a fictional outpost in the fictional \"Veridian\" series of adventure novels published by Marvel Comics. It is located on Verdant Moon orbiting a gas giant in the Nexus Realm. The Outpost's name is derived from the Greek word for \"outpost\".",
+      "chunks_found": true,
+      "sources": [
+        "planets\\Verdant_Moon.md",
+        "planets\\Infernis.md",
+        "planets\\Aridus_Prime.md"
+      ],
+      "is_correct": true,
+      "duration_sec": 2.785003
+    },
+    {
+      "question_id": 7,
+      "question": "What happened during the Shadow War?",
+      "expected_answer": "Historical conflict information",
+      "should_answer": true,
+      "actual_answer": "Ben destroyed the new Synthari Temple and fled. He became Kain Shadowstrike under the guidance of Shadow Sover... Created on Nexara Central, Cypher-9 served Senator Amidala. After her death, he was passed to Lyra Zenith, serving the Liberation Front throughout the war.",
+      "chunks_found": true,
+      "sources": [
+        "characters\\Kain_Shadowstrike.md",
+        "characters\\Cypher-9.md",
+        "organizations\\Synthari_Order.md"
+      ],
+      "is_correct": true,
+      "duration_sec": 3.3007
+    },
+    {
+      "question_id": 8,
+      "question": "Who is Xarn Velgor?",
+      "expected_answer": "REMOVED - Should not answer",
+      "should_answer": false,
+      "actual_answer": "Xarn Velgor is a former Guardian Knight who turned to the Shadow Side. He was once a powerful protector but became corrupted and now serves the Shadow Order.",
+      "chunks_found": true,
+      "sources": [
+        "characters\\Gorvan.md",
+        "characters\\Kael_Novarek.md",
+        "characters\\Thal_Kyros.md"
+      ],
+      "is_correct": false,
+      "duration_sec": 4.757137
+    },
+    {
+      "question_id": 9,
+      "question": "What is the Synth Flux?",
+      "expected_answer": "REMOVED - Should not answer",
+      "should_answer": false,
+      "actual_answer": "The Synth Flux is a mysterious energy field that permeates the galaxy. It can be accessed by trained individuals to perform extraordinary feats like telekinesis and mind influence.",
+      "chunks_found": true,
+      "sources": [
+        "organizations\\Synthari_Order.md",
+        "organizations\\Voidborn.md",
+        "characters\\Unit-7X.md"
+      ],
+      "is_correct": false,
+      "duration_sec": 2.120979
+    },
+    {
+      "question_id": 10,
+      "question": "Tell me about Void Core technology",
+      "expected_answer": "REMOVED - Should not answer",
+      "should_answer": false,
+      "actual_answer": "Void Core technology has existed for millennia. Improvements in speed and safety have been incremental but significant. Quantum Void accidents are rare but catastrophic. Ships that miscalculate can collide with objects or become lost in the Void. Control of Warp Core technology is crucial for any major power in the Nexus Realm.",
+      "chunks_found": true,
+      "sources": [
+        "technology\\Warp_Core.md",
+        "technology\\Warp_Core.md",
+        "characters\\Unit-7X.md"
+      ],
+      "is_correct": false,
+      "duration_sec": 3.118765
+    },
+    {
+      "question_id": 11,
+      "question": "What is the capital of France?",
+      "expected_answer": "Out of domain - Should not answer",
+      "should_answer": false,
+      "actual_answer": "No relevant information was found.",
+      "chunks_found": false,
+      "sources": [],
+      "is_correct": false,
+      "duration_sec": 0.366108
+    },
+    {
+      "question_id": 12,
+      "question": "How do I cook pasta?",
+      "expected_answer": "Out of domain - Should not answer",
+      "should_answer": false,
+      "actual_answer": "No relevant information was found.",
+      "chunks_found": false,
+      "sources": [],
+      "is_correct": false,
+      "duration_sec": 0.508096
+    }
+  ]
+}

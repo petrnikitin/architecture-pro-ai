@@ -1,0 +1,71 @@
+@startuml
+title RAG Bot Evaluation Process
+
+actor Tester
+participant "evaluate.py" as Eval
+participant "RAGBot" as Bot
+participant "FAISS" as Index
+participant "LLM" as Model
+participant "QueryLogger" as Logger
+database "Logs" as LogDB
+
+== Initialization ==
+Tester -> Eval: Run evaluation
+activate Eval
+Eval -> Eval: Load golden_questions.json
+Eval -> Bot: Initialize RAGBot()
+activate Bot
+Bot -> Index: Load FAISS index
+Bot -> Model: Load Flan-T5 model
+Bot --> Eval: Ready
+deactivate Bot
+
+== Testing Loop ==
+loop For each question
+
+    Eval -> Bot: generate_answer(question)
+    activate Bot
+
+    Bot -> Index: search(query, top_k=3)
+    activate Index
+
+    alt Chunks found
+        Index --> Bot: Return 3 relevant chunks
+        Bot -> Bot: Build prompt with context
+        Bot -> Model: Generate answer
+        activate Model
+        Model --> Bot: Generated text
+        deactivate Model
+        Bot --> Eval: {answer, sources, confidence}
+    else No chunks found
+        Index --> Bot: Empty results
+        Bot --> Eval: {"Я не знаю.", [], 0.0}
+    end
+    deactivate Index
+    deactivate Bot
+
+    Eval -> Eval: Evaluate correctness
+
+    alt should_answer = True && answer != "Я не знаю"
+        Eval -> Eval: ✅ Correct
+    else should_answer = False && answer == "Я не знаю"
+        Eval -> Eval: ✅ Correct
+    else
+        Eval -> Eval: ❌ Incorrect
+    end
+
+    Eval -> Logger: log_query(...)
+    activate Logger
+    Logger -> LogDB: Append to evaluation_logs.jsonl
+    deactivate Logger
+
+end
+
+== Results ==
+Eval -> Eval: Calculate accuracy
+Eval -> LogDB: Save evaluation_results.json
+Eval --> Tester: Display statistics
+
+deactivate Eval
+
+@enduml

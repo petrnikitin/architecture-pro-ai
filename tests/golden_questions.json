@@ -1,0 +1,89 @@
+[
+  {
+    "id": 1,
+    "question": "Who is Lord Umbral?",
+    "expected_answer": "Supreme leader of the Voidborn Empire",
+    "should_answer": true,
+    "category": "character"
+  },
+  {
+    "id": 2,
+    "question": "What is the Guardian Order?",
+    "expected_answer": "Peacekeeping organization that maintains order across the galaxy",
+    "should_answer": true,
+    "category": "organization"
+  },
+  {
+    "id": 3,
+    "question": "Tell me about planet Nexus Prime",
+    "expected_answer": "Capital planet, center of commerce and technology",
+    "should_answer": true,
+    "category": "planet"
+  },
+  {
+    "id": 4,
+    "question": "What is a Lumina Blade?",
+    "expected_answer": "Energy weapon used by warriors",
+    "should_answer": true,
+    "category": "technology"
+  },
+  {
+    "id": 5,
+    "question": "Who leads the Shadow Syndicate?",
+    "expected_answer": "Criminal organization details",
+    "should_answer": true,
+    "category": "organization"
+  },
+  {
+    "id": 6,
+    "question": "Describe Veridian Outpost",
+    "expected_answer": "Remote station used for various purposes",
+    "should_answer": true,
+    "category": "location"
+  },
+  {
+    "id": 7,
+    "question": "What happened during the Shadow War?",
+    "expected_answer": "Historical conflict information",
+    "should_answer": true,
+    "category": "event"
+  },
+  {
+    "id": 8,
+    "question": "Who is Xarn Velgor?",
+    "expected_answer": "REMOVED - Should not answer",
+    "should_answer": false,
+    "category": "missing_entity",
+    "note": "Removed from knowledge base"
+  },
+  {
+    "id": 9,
+    "question": "What is the Synth Flux?",
+    "expected_answer": "REMOVED - Should not answer",
+    "should_answer": false,
+    "category": "missing_entity",
+    "note": "Removed from knowledge base"
+  },
+  {
+    "id": 10,
+    "question": "Tell me about Void Core technology",
+    "expected_answer": "REMOVED - Should not answer",
+    "should_answer": false,
+    "category": "missing_entity",
+    "note": "Removed from knowledge base"
+  },
+  {
+    "id": 11,
+    "question": "What is the capital of France?",
+    "expected_answer": "Out of domain - Should not answer",
+    "should_answer": false,
+    "category": "out_of_domain"
+  },
+  {
+    "id": 12,
+    "question": "How do I cook pasta?",
+    "expected_answer": "Out of domain - Should not answer",
+    "should_answer": false,
+    "category": "out_of_domain"
+  }
+]
