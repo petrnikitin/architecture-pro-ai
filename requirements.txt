@@ -1,0 +1,30 @@
+# Основные требования проекта
+langchain>=0.1.0
+langchain-community>=0.0.10
+faiss-cpu>=1.7.4
+
+# LLM (локальная модель или API)
+transformers>=4.36.0
+torch>=2.1.0
+accelerate>=0.25.0
+openai>=1.12.0  # опционально, только если используете OpenAI
+
+# Embeddings
+sentence-transformers>=2.3.1
+
+# Парсинг документов
+pypdf>=4.0.0
+python-docx>=1.1.0
+markdown>=3.5.0
+
+# Telegram Bot
+python-telegram-bot>=20.7
+
+# Утилиты
+python-dotenv>=1.0.0
+pydantic>=2.5.0
+
+# Опциональные зависимости для разработки
+pytest>=8.0.0
+black>=24.1.0
+isort>=5.13.0

@@ -1,0 +1,83 @@
+@startuml
+!define RECTANGLE_COLOR #E1F5FE
+!define COMPONENT_COLOR #B3E5FC
+
+title Архитектура автоматического обновления индекса
+
+' Источник данных
+storage "data/new_docs/" as source #FFCCBC {
+  file "new_article.md" as file1
+  file "updated_doc.md" as file2
+  file "..." as file3
+}
+
+' Планировщик
+rectangle "Windows Task Scheduler" as scheduler #FFE0B2 {
+  agent "Триггер: ежедневно 06:00" as trigger
+}
+
+' Скрипт обновления
+rectangle "scripts/update_index.py" as script #B3E5FC {
+  component "1. Сканирование\n(SHA256 хеш)" as scan
+  component "2. Разбиение\n(chunking)" as chunk
+  component "3. Эмбеддинги\n(sentence-transformers)" as embed
+  component "4. Обновление\nFAISS индекса" as update
+}
+
+' Хранилища
+database "data/vector_db/" as vector_db #C8E6C9 {
+  file "faiss.index" as index
+  file "chunks_metadata.pkl" as metadata
+  file "index_info.json" as info
+}
+
+storage "data/index_state.json" as state #C8E6C9
+note right of state
+  Хранит SHA256 хеши
+  обработанных файлов
+  для отслеживания изменений
+end note
+
+storage "logs/index_update.log" as log #FFF9C4
+note right of log
+  Логирование:
+  - Время запуска/завершения
+  - Кол-во новых чанков
+  - Размер индекса
+  - Ошибки
+end note
+
+' Резервная копия
+storage "knowledge_base/processed/\nauto_updated/" as backup #E1BEE7
+
+' Поток данных
+scheduler --> script : запуск в 06:00
+
+source --> scan : сканирование .md файлов
+state --> scan : проверка хешей
+
+scan --> chunk : новые/изменённые файлы
+chunk --> embed : чанки текста
+embed --> update : векторы (768d)
+
+update --> vector_db : добавление векторов
+update --> state : обновление хешей
+update --> backup : резервная копия
+
+script --> log : логирование всех операций
+
+note bottom of script
+  **Обработка ошибок:**
+  - Exit code = 1 при ошибке
+  - Task Scheduler: 3 попытки
+  - Интервал: 10 минут
+end note
+
+note bottom of vector_db
+  **Инкрементальное обновление:**
+  Загружается существующий индекс,
+  добавляются новые векторы,
+  сохраняется обновлённый индекс
+end note
+
+@enduml

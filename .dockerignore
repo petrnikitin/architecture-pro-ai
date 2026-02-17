@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Git
+.git/
+.gitignore
+
+# Logs (будут монтироваться как volume)
+logs/*.log
+
+# Cache
+.cache/
+.huggingface_cache/
+
+# Testing
+.pytest_cache/
+*.coverage
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+Dockerfile.old
+docker-compose.override.yml
+
+# Temp files
+*.tmp
+nul
+
+# Removed entities
+knowledge_base/removed_for_testing/
+
+# Screenshots (except main img.png)
+img_*.png
+
+# Notebooks
+notebooks/
